@@ -7,102 +7,48 @@ import java.util.HashMap;
 import java.math.BigDecimal;
 
 public class Sala {
-    private int id;
+    private Integer id;
     private String nombre;
-    private String tipoSala;
-    private String pelicula;
-    private String horario;
-    private int filas;
-    private int asientosPorFila;
-    private List<Asiento> asientos;
-
-    public Sala(int id, String nombre, String tipoSala, String pelicula, String horario) {
+    private SalaTipo tipo;
+    private Integer capacidad;
+    private Map<Integer, Asiento> distribucion;
+    
+    public Sala(Integer id, String nombre, SalaTipo tipo, Integer capacidad) {
         this.id = id;
         this.nombre = nombre;
-        this.tipoSala = tipoSala.toUpperCase();
-        this.pelicula = pelicula;
-        this.horario = horario;
-        this.asientos = new ArrayList<>();
-        configurarSegunTipo();
-        inicializarAsientos();
+        this.tipo = tipo;
+        this.capacidad = capacidad;
+        this.distribucion = new HashMap<>();
     }
-    private void configurarSegunTipo() {
-        switch (tipoSala) {
-            case "VIP":
-                filas = 8;
-                asientosPorFila = 12;
-                break;
-            case "IMAX":
-                filas = 15;
-                asientosPorFila = 30;
-                break;
-            case "3D":
-                filas = 12;
-                asientosPorFila = 25;
-                break;
-            case "2D":
-            default:
-                filas = 10;
-                asientosPorFila = 20;
-                break;
-        }
-    }
-    private void inicializarAsientos() {
-        for (int i = 0; i < filas; i++) {
-            char filaLetra = (char) ('A' + i);
-            for (int j = 1; j <= asientosPorFila; j++) {
-                asientos.add(new Asiento(filaLetra, j));
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    
+    public SalaTipo getTipo() { return tipo; }
+    public void setTipo(SalaTipo tipo) { this.tipo = tipo; }
+    
+    public Integer getCapacidad() { return capacidad; }
+    public void setCapacidad(Integer capacidad) { this.capacidad = capacidad; }
+    
+    public Map<Integer, Asiento> getDistribucion() { return distribucion; }
+    public void setDistribucion(Map<Integer, Asiento> distribucion) { this.distribucion = distribucion; }
+
+    public void configurarSala() {
+        distribucion.clear();
+        
+        String[] filas = {"A", "B", "C", "D", "E", "F", "G", "H"};
+        int asientosPorFila = capacidad / filas.length;
+        int asientoId = 1;
+        
+        for (String fila : filas) {
+            for (int num = 1; num <= asientosPorFila; num++) {
+                Asiento asiento = new Asiento(asientoId, fila, num);
+                distribucion.put(asientoId, asiento);
+                asientoId++;
             }
         }
-    }
-
-    public Asiento obtenerAsiento(char fila, int numero) {
-        for (Asiento a : asientos) {
-            if (a.getFila() == fila && a.getNumero() == numero) {
-                return a;
-            }
-        }
-        return null;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getTipoSala() {
-        return tipoSala;
-    }
-
-    public String getPelicula() {
-        return pelicula;
-    }
-
-    public String getHorario() {
-        return horario;
-    }
-
-    public List<Asiento> getAsientos() {
-        return asientos;
-    }
-
-    public int getFilas() {
-        return filas;
-    }
-
-    public int getAsientosPorFila() {
-        return asientosPorFila;
-    }
-
-    @Override
-    public String toString() {
-        return "Sala{id=" + id + ", nombre='" + nombre + "', tipoSala='" + tipoSala +
-                "', pelicula='" + pelicula + "', horario='" + horario +
-                "', filas=" + filas + ", asientosPorFila=" + asientosPorFila + "}";
     }
 }
-
-
