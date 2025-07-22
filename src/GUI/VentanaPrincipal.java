@@ -4,6 +4,9 @@ import java.awt.*;
 //Ya hice que el botón nos lleve a una ventana de reserva, pero no sé si toca crear una nueva clase para esa ventana o que se hace ajsdjafsd
 //no entiendo, como asi? lajsldka
 public class VentanaPrincipal extends JFrame {
+    private Administrador admin = new Administrador();
+    private Cliente cliente = new Cliente(1, "Invitado", "invitado@email.com", ClienteTipo.GENERAL);
+
     public VentanaPrincipal() {
         setTitle("CineUNAL");
         setSize(500, 400);
@@ -30,7 +33,7 @@ public class VentanaPrincipal extends JFrame {
         panelCentro.add(btnReservar);
         panelCentro.add(Box.createRigidArea(new Dimension(0, 15)));
         btnReservar.addActionListener(e -> {
-            VentanaReserva ventanaReserva = new VentanaReserva();
+            VentanaReserva ventanaReserva = new VentanaReserva(admin, cliente);
             ventanaReserva.setVisible(true);
         });
 
