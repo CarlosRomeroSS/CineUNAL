@@ -1,4 +1,3 @@
-import java.time.DateTime;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -71,7 +70,5 @@ public class Administrador {
         return funciones.stream()
             .filter(f -> f.getPelicula().equals(pelicula))
             .collect(java.util.stream.Collectors.toList());
-    }
-}
     }
 }
