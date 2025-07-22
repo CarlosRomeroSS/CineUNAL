@@ -29,7 +29,16 @@ public class BoletoDigital {
         pdf.append("Cliente: ").append(reserva.getCliente().getNombre()).append("\n");
         pdf.append("Película: ").append(reserva.getFuncion().getPelicula().getTitulo()).append("\n");
         pdf.append("Sala: ").append(reserva.getFuncion().getSala().getNombre()).append("\n");
-        pdf.append("Fecha: ").append(reserva.getFuncion().getFechaHora()).append("\n");
+
+        // Formatear la fecha y hora como AA/MM/DD y HH/MM/SS
+        java.time.LocalDateTime fechaHora = reserva.getFuncion().getFechaHora();
+        String fecha = String.format("%02d/%02d/%02d", 
+            fechaHora.getYear() % 100, fechaHora.getMonthValue(), fechaHora.getDayOfMonth());
+        String hora = String.format("%02d/%02d/%02d", 
+            fechaHora.getHour(), fechaHora.getMinute(), fechaHora.getSecond());
+
+        pdf.append("Fecha (AA/MM/DD): ").append(fecha).append("\n");
+        pdf.append("Hora (HH/MM/SS): ").append(hora).append("\n");
         pdf.append("Asientos: ");
         
         for (Asiento asiento : reserva.getAsientos()) {
