@@ -1,10 +1,8 @@
 package GUI;
 import javax.swing.*;
 import java.awt.*;
-public class VentanaPrincipal extends JFrame {
-    private Administrador admin = new Administrador();
-    private Cliente cliente = new Cliente(1, "Invitado", "invitado@email.com", ClienteTipo.GENERAL);
 
+public class VentanaPrincipal extends JFrame {
     public VentanaPrincipal() {
         setTitle("CineUNAL");
         setSize(500, 400);
