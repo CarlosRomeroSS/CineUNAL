@@ -28,7 +28,6 @@ public class Administrador {
     }
     public void modificarPelicula(Pelicula pelicula) {
         if (pelicula != null && peliculas.contains(pelicula)) {
-            // La película ya está en la lista, se modifican sus propiedades
             System.out.println("Película modificada: " + pelicula.getTitulo());
         } else {
             System.out.println("Película no encontrada para modificar");
@@ -36,7 +35,6 @@ public class Administrador {
     }
     public void configurarFuncion(Funcion funcion) {
         if (funcion != null && !funciones.contains(funcion)) {
-            // Verificar que la película y sala existan
             if (peliculas.contains(funcion.getPelicula()) && 
                 salas.contains(funcion.getSala())) {
                 funciones.add(funcion);
