@@ -1,5 +1,10 @@
-
-// Funcion.java
+import java.time.DateTime;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.math.BigDecimal;
 public class Funcion {
     private Integer id;
     private LocalDateTime fechaHora;
@@ -7,7 +12,6 @@ public class Funcion {
     private Pelicula pelicula;
     private String tipoVersion;
     
-    // Constructor
     public Funcion(Integer id, LocalDateTime fechaHora, Sala sala, Pelicula pelicula, String tipoVersion) {
         this.id = id;
         this.fechaHora = fechaHora;
@@ -16,7 +20,6 @@ public class Funcion {
         this.tipoVersion = tipoVersion;
     }
     
-    // Getters y Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     
