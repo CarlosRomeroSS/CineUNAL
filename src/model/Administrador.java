@@ -72,5 +72,3 @@ public class Administrador {
             .collect(java.util.stream.Collectors.toList());
     }
 }
-    }
-}
