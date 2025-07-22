@@ -1,7 +1,8 @@
 package GUI;
 import javax.swing.*;
 import java.awt.*;
-
+//Ya hice que el botón nos lleve a una ventana de reserva, pero no sé si toca crear una nueva clase para esa ventana o que se hace ajsdjafsd
+//no entiendo, como asi? lajsldka
 public class VentanaPrincipal extends JFrame {
     public VentanaPrincipal() {
         setTitle("CineUNAL");
@@ -28,6 +29,10 @@ public class VentanaPrincipal extends JFrame {
         btnReservar.setFont(new Font("Arial", Font.PLAIN, 18));
         panelCentro.add(btnReservar);
         panelCentro.add(Box.createRigidArea(new Dimension(0, 15)));
+        btnReservar.addActionListener(e -> {
+            VentanaReserva ventanaReserva = new VentanaReserva();
+            ventanaReserva.setVisible(true);
+        });
 
         JButton btnFunciones = new JButton("Ver Funciones");
         btnFunciones.setAlignmentX(Component.CENTER_ALIGNMENT);
