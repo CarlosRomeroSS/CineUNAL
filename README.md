@@ -11,3 +11,26 @@
 - **Boleto digital:** Genera un boleto digital en formato texto con QR simulado.
 
 ## Estructura del Proyecto
+CineApp/
+├── README.md
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── model/
+│   │   │   │   ├── Administrador.java
+│   │   │   │   ├── Pelicula.java
+│   │   │   │   ├── Sala.java
+│   │   │   │   ├── Funcion.java
+│   │   │   │   ├── Cliente.java
+│   │   │   │   ├── Reserva.java
+│   │   │   │   ├── BoletoDigital.java
+│   │   │   │   └── enums/
+│   │   │   │       ├── SalaTipo.java
+│   │   │   │       └── ClienteTipo.java
+│   │   │   ├── ui/
+│   │   │   │   ├── VentanaInicio.java
+│   │   │   │   ├── VentanaSeleccion.java
+│   │   │   │   └── VentanaReservar.java
+│   │   │   └── Main.java
+├── .gitignore
+└── build.gradle / pom.xml (si están usando Gradle o Maven)
