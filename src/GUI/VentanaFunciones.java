@@ -22,23 +22,26 @@ public class VentanaFunciones extends JFrame {
         panel.add(header, BorderLayout.NORTH);
 
         // Información de las funciones con formato unificado
-        String funcionesInfo = ""
-            + "Función 1:\n"
-            + "Película: Avatar\n"
-            + "Sala: Sala 1\n"
-            + "Fecha/Hora: 21/07/25 19:30:00\n"
-            + "Sillas Disponibles: 25\n\n"
-            + "Función 2:\n"
-            + "Película: Avatar\n"
-            + "Sala: Sala 2\n"
-            + "Fecha/Hora: 21/07/25 21:30:00\n"
-            + "Sillas Disponibles: 30\n\n"
-            + "Función 3:\n"
-            + "Película: Otra Película\n"
-            + "Sala: Sala VIP\n"
-            + "Fecha/Hora: 21/07/25 20:00:00\n"
-            + "Sillas Disponibles: 10\n";
-        
+        String funcionesInfo = """
+            Función 1:
+            Película: Avatar
+            Sala: Sala 1
+            Fecha/Hora: 21/07/25 19:30:00
+            Sillas Disponibles: 25
+
+            Función 2:
+            Película: Avatar
+            Sala: Sala 2
+            Fecha/Hora: 21/07/25 21:30:00
+            Sillas Disponibles: 30
+
+            Función 3:
+            Película: Otra Película
+            Sala: Sala VIP
+            Fecha/Hora: 21/07/25 20:00:00
+            Sillas Disponibles: 10
+            """;
+
         JTextArea textArea = new JTextArea(funcionesInfo);
         textArea.setEditable(false);
         textArea.setFont(UIConfig.TEXT_FONT);
