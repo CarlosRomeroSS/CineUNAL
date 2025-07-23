@@ -33,7 +33,7 @@ public class Funcion {
     public String getTipoVersion() { return tipoVersion; }
     public void setTipoVersion(String tipoVersion) { this.tipoVersion = tipoVersion; }
     
-    // Método específico del diagrama
+    
     public Map<Asiento, AsientoEstado> mostrarDisponibilidad() {
         Map<Asiento, AsientoEstado> disponibilidad = new HashMap<>();
         
