@@ -21,34 +21,33 @@ public class VentanaReservar extends JFrame {
         header.setBackground(UIConfig.BACKGROUND_COLOR);
         panel.add(header, BorderLayout.NORTH);
 
-        // Panel central (se le añade un espacio para asegurar que no se colapse)
+        // Panel central (con espacio para tamaño)
         JPanel panelCentral = new JPanel();
         panelCentral.setLayout(new BoxLayout(panelCentral, BoxLayout.Y_AXIS));
         panelCentral.setBackground(UIConfig.BACKGROUND_COLOR);
-        // Agrega un espacio vertical para forzar el tamaño del panel central
         panelCentral.add(Box.createVerticalStrut(50));
         panel.add(panelCentral, BorderLayout.CENTER);
 
         // Panel inferior para los botones
         JPanel botonesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         botonesPanel.setBackground(UIConfig.BACKGROUND_COLOR);
-        
+
         JButton btnAñadirReserva = new JButton("Añadir Reserva");
         btnAñadirReserva.setFont(UIConfig.BUTTON_FONT);
-        btnAñadirReserva.addActionListener((_) -> 
+        btnAñadirReserva.addActionListener(e ->
             JOptionPane.showMessageDialog(this, "Reserva añadida exitosamente.")
         );
 
         JButton btnCancelarReserva = new JButton("Cancelar Reserva");
         btnCancelarReserva.setFont(UIConfig.BUTTON_FONT);
-        btnCancelarReserva.addActionListener((_) -> 
+        btnCancelarReserva.addActionListener(e ->
             JOptionPane.showMessageDialog(this, "Reserva cancelada.")
         );
-        
+
         botonesPanel.add(btnAñadirReserva);
         botonesPanel.add(btnCancelarReserva);
         panel.add(botonesPanel, BorderLayout.SOUTH);
-        
+
         setContentPane(panel);
         setVisible(true);
     }
