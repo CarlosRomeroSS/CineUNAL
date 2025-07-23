@@ -10,18 +10,15 @@ public class VentanaFunciones extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Panel principal para la ventana
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(UIConfig.BACKGROUND_COLOR);
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // Encabezado con el mismo estilo que en VentanaReservar
         JLabel header = new JLabel("Funciones de Películas", SwingConstants.CENTER);
         header.setFont(new Font("Arial", Font.BOLD, 20));
         header.setBackground(UIConfig.BACKGROUND_COLOR);
         panel.add(header, BorderLayout.NORTH);
 
-        // Información de las funciones con formato unificado
         String funcionesInfo = """
             Función 1:
             Película: Avatar
@@ -50,7 +47,6 @@ public class VentanaFunciones extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
         panel.add(scrollPane, BorderLayout.CENTER);
         
-        // Panel inferior para los botones
         JPanel botonesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         botonesPanel.setBackground(UIConfig.BACKGROUND_COLOR);
         
