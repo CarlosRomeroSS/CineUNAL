@@ -12,16 +12,16 @@ public class Administrador {
 
     public Administrador() {
         this.peliculas = new ArrayList<>();
-        this.salas      = new ArrayList<>();
-        this.funciones  = new ArrayList<>();
-        this.reservas   = new ArrayList<>();
+        this.salas = new ArrayList<>();
+        this.funciones = new ArrayList<>();
+        this.reservas = new ArrayList<>();
     }
 
     /* --- Getters --- */
     public List<Pelicula> getPeliculas() { return peliculas; }
-    public List<Sala>     getSalas()     { return salas; }
-    public List<Funcion>  getFunciones() { return funciones; }
-    public List<Reserva>  getReservas()  { return reservas; }
+    public List<Sala> getSalas() { return salas; }
+    public List<Funcion> getFunciones() { return funciones; }
+    public List<Reserva> getReservas() { return reservas; }
 
     /* --- Agregar / configurar --- */
     public void agregarPelicula(Pelicula pelicula) {
