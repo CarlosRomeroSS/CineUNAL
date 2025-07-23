@@ -1,5 +1,7 @@
 package model;
+
 import java.math.BigDecimal;
+
 public class PriceCalculator {
     private static final BigDecimal PRECIO_BASE = new BigDecimal("15000");
     private static final BigDecimal DESCUENTO_ESTUDIANTE = new BigDecimal("0.20");
@@ -8,9 +10,8 @@ public class PriceCalculator {
     private static final BigDecimal RECARGO_VIP = new BigDecimal("0.50");
     private static final BigDecimal RECARGO_IMAX = new BigDecimal("0.80");
     private static final BigDecimal RECARGO_TRESD = new BigDecimal("0.30");
-    
+
     public BigDecimal calcularPrecio(Reserva reserva) {
-        BigDecimal precioTotal = BigDecimal.ZERO;
         BigDecimal precioAsiento = PRECIO_BASE;
         SalaTipo tipoSala = reserva.getFuncion().getSala().getTipo();
         switch (tipoSala) {
@@ -42,12 +43,9 @@ public class PriceCalculator {
             default:
                 break;
         }
-       
+
         int cantidadAsientos = reserva.getAsientos().size();
-        precioTotal = precioAsiento.multiply(new BigDecimal(cantidadAsientos));
-        
-        return precioTotal;
+        // Calcular precio total como precio por asiento multiplicado por cantidad
+        return precioAsiento.multiply(BigDecimal.valueOf(cantidadAsientos));
     }
 }
-
-
