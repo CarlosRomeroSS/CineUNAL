@@ -30,11 +30,11 @@ public class VentanaPrincipal extends JFrame {
 
         // Se crean y añaden botones estilizados
         JButton btnReservar = createStyledButton("Reservar");
-        btnReservar.addActionListener(e -> new VentanaReservar());
+        btnReservar.addActionListener((_) -> {new VentanaReservar();});
         JButton btnFunciones = createStyledButton("Ver Funciones");
-        btnFunciones.addActionListener(e -> new VentanaFunciones());
+        btnFunciones.addActionListener((_) -> new VentanaFunciones());
         JButton btnSalir = createStyledButton("Salir");
-        btnSalir.addActionListener(e -> System.exit(0));
+        btnSalir.addActionListener((_) -> System.exit(0));
 
         panelCentro.add(btnReservar);
         panelCentro.add(Box.createRigidArea(new Dimension(0, 15)));
@@ -62,11 +62,14 @@ public class VentanaPrincipal extends JFrame {
         return button;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // Usa el look and feel del sistema operativo
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {}
         SwingUtilities.invokeLater(() -> new VentanaPrincipal());
+    }/* */
+    public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(() -> new VentanaPrincipal());
     }
 }

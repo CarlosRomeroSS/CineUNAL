@@ -35,11 +35,15 @@ public class VentanaReservar extends JFrame {
         
         JButton btnAñadirReserva = new JButton("Añadir Reserva");
         btnAñadirReserva.setFont(UIConfig.BUTTON_FONT);
-        // Agrega el action listener para "Añadir Reserva" si es necesario
-        
+        btnAñadirReserva.addActionListener((_) -> 
+            JOptionPane.showMessageDialog(this, "Reserva añadida exitosamente.")
+        );
+
         JButton btnCancelarReserva = new JButton("Cancelar Reserva");
         btnCancelarReserva.setFont(UIConfig.BUTTON_FONT);
-        // Agrega el action listener para "Cancelar Reserva" si es necesario
+        btnCancelarReserva.addActionListener((_) -> 
+            JOptionPane.showMessageDialog(this, "Reserva cancelada.")
+        );
         
         botonesPanel.add(btnAñadirReserva);
         botonesPanel.add(btnCancelarReserva);
