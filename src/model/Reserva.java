@@ -55,4 +55,9 @@ public class Reserva {
         this.total = calculator.calcularPrecio(this);
         return this.total;
     }
+
+    public BigDecimal getPrecioPorAsiento() {
+        if (asientos.isEmpty()) return BigDecimal.ZERO;
+        return total.divide(BigDecimal.valueOf(asientos.size()), 2, java.math.RoundingMode.HALF_UP);
+    }
 }

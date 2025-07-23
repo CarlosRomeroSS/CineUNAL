@@ -34,17 +34,24 @@ public class BoletoDigital {
 
         pdf.append("Fecha (YYY/mm/dd): ").append(fecha).append("\n");
         pdf.append("Hora (hh:nn:ss): ").append(hora).append("\n");
-        pdf.append("Asientos: ");
-        
+
+        // Mostrar asientos y precios individuales
+        pdf.append("Asientos:\n");
+
+        java.math.BigDecimal precioUnitario = reserva.getPrecioPorAsiento();
+
         for (Asiento asiento : reserva.getAsientos()) {
-            pdf.append(asiento.getFila()).append(asiento.getNumero()).append(" ");
+            pdf.append("- ").append(asiento.getFila())
+            .append(asiento.getNumero())
+            .append(": $").append(precioUnitario).append("\n");
         }
-        
-        pdf.append("\nTotal: $").append(reserva.getTotal()).append("\n");
+
+        pdf.append("Total: $").append(reserva.getTotal()).append("\n");
         pdf.append("===============================");
-        
+
         return pdf.toString();
     }
+
 
     private String generarQR() {
         return "QR" + System.currentTimeMillis();
