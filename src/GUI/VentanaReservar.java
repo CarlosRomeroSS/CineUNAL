@@ -35,6 +35,7 @@ public class VentanaReservar extends JFrame {
         
         JButton btnAñadirReserva = new JButton("Añadir Reserva");
         btnAñadirReserva.setFont(UIConfig.BUTTON_FONT);
+        btnAñadirReserva.addActionListener(e -> new VentanaHacerReserva());
         // Agrega el action listener para "Añadir Reserva" si es necesario
         
         JButton btnCancelarReserva = new JButton("Cancelar Reserva");
