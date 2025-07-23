@@ -1,36 +1,38 @@
-# CineUNAL
+🎬 CineUNAL
 
-**CineUNAL** es un proyecto de Programación Orientada a Objetos (POO) que simula un sistema de gestión y reservas para un cine universitario. Permite administrar películas, salas, funciones, clientes y reservas, generando boletos digitales y ofreciendo una interfaz gráfica amigable.
+CineUNAL es un proyecto de Programación Orientada a Objetos (POO) que simula un sistema de gestión y reservas para un cine universitario. Permite administrar películas, salas, funciones, clientes y reservas, generando boletos digitales con una interfaz gráfica amigable.
+✨ Características
 
-## Características
+    🎞️ Gestión de películas: Agrega, consulta y administra películas disponibles.
 
-- **Gestión de películas:** Agrega, consulta y administra películas disponibles.
-- **Gestión de salas:** Configura salas con diferentes tipos y capacidades.
-- **Gestión de funciones:** Programa funciones para cada película y sala.
-- **Reservas:** Permite a los clientes seleccionar asientos y reservar entradas.
-- **Boleto digital:** Genera un boleto digital en formato texto con QR simulado.
+    🏟️ Gestión de salas: Configura salas con diferentes tipos y capacidades.
+
+    📅 Gestión de funciones: Programa funciones para cada película y sala.
+
+    🎟️ Reservas: Permite a los clientes seleccionar asientos y reservar entradas.
+
+    📄 Boleto digital: Genera un boleto digital en formato texto con QR simulado.
 
 ## Estructura del Proyecto
 CineApp/
 ├── README.md
 ├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── model/
-│   │   │   │   ├── Administrador.java
-│   │   │   │   ├── Pelicula.java
-│   │   │   │   ├── Sala.java
-│   │   │   │   ├── Funcion.java
-│   │   │   │   ├── Cliente.java
-│   │   │   │   ├── Reserva.java
-│   │   │   │   ├── BoletoDigital.java
-│   │   │   │   └── enums/
-│   │   │   │       ├── SalaTipo.java
-│   │   │   │       └── ClienteTipo.java
-│   │   │   ├── ui/
-│   │   │   │   ├── VentanaInicio.java
-│   │   │   │   ├── VentanaSeleccion.java
-│   │   │   │   └── VentanaReservar.java
-│   │   │   └── Main.java
-├── .gitignore
-└── build.gradle / pom.xml (si están usando Gradle o Maven)
+│   └── main/
+│       └── java/
+│           ├── model/
+│           │   ├── Administrador.java
+│           │   ├── Pelicula.java
+│           │   ├── Sala.java
+│           │   ├── Funcion.java
+│           │   ├── Cliente.java
+│           │   ├── Reserva.java
+│           │   ├── BoletoDigital.java
+│           │   └── enums/
+│           │       ├── SalaTipo.java
+│           │       └── ClienteTipo.java
+│           ├── GUI/
+│           │   ├── VentanaInicio.java
+│           │   ├── VentanaSeleccion.java
+│           │   └── VentanaReservar.java
+│           └── Main.java
+└── .gitignore
