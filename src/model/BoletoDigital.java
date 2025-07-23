@@ -25,7 +25,7 @@ public class BoletoDigital {
         pdf.append("Película: ").append(reserva.getFuncion().getPelicula().getTitulo()).append("\n");
         pdf.append("Sala: ").append(reserva.getFuncion().getSala().getNombre()).append("\n");
 
-        // Formatear la fecha y hora como AA/MM/DD y HH/MM/SS
+        // Formatear la fecha y hora como Año/Mes/Dia y Hora/Minuto/Segundo
         java.time.LocalDateTime fechaHora = reserva.getFuncion().getFechaHora();
         String fecha = String.format("%02d/%02d/%02d", 
             fechaHora.getYear() % 100, fechaHora.getMonthValue(), fechaHora.getDayOfMonth());
