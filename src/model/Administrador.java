@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Administrador {
-    private List<Pelicula> peliculas;
-    private List<Sala> salas;
-    private List<Funcion> funciones;
-    private List<Reserva> reservas;
+    private final List<Pelicula> peliculas;
+    private final List<Sala> salas;
+    private final List<Funcion> funciones;
+    private final List<Reserva> reservas;
 
     public Administrador() {
         this.peliculas = new ArrayList<>();
@@ -56,12 +56,10 @@ public class Administrador {
         if (reserva != null && !reservas.contains(reserva)) {
             reservas.add(reserva);
             System.out.println("Reserva agregada: ID " + reserva.getId() +
-                            " para " + reserva.getCliente().getNombre());
+                               " para " + reserva.getCliente().getNombre());
         }
     }
 
-
-    /* --- Búsquedas auxiliares --- */
     public Pelicula buscarPeliculaPorId(int id) {
         return peliculas.stream()
                         .filter(p -> p.getId() == id)
@@ -92,7 +90,6 @@ public class Administrador {
                        .collect(Collectors.toList());
     }
 
-    /* --- Eliminaciones con validación --- */
     public void eliminarPelicula(int id) {
         Pelicula p = buscarPeliculaPorId(id);
         if (p == null) {
@@ -151,5 +148,4 @@ public class Administrador {
         System.out.println("Reserva eliminada: ID " + r.getId() +
                            " de " + r.getCliente().getNombre());
     }
-
 }
