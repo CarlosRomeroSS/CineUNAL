@@ -8,6 +8,7 @@ public class Funcion {
     private Sala sala;
     private Pelicula pelicula;
     private String tipoVersion;
+    private String formato;
     
     public Funcion(Integer id, LocalDateTime fechaHora, Sala sala, Pelicula pelicula, String tipoVersion) {
         this.id = id;
@@ -41,5 +42,13 @@ public class Funcion {
         }
         
         return disponibilidad;
+    }
+    
+    public String getFormato() {
+        return formato;
+    }
+
+    public void setFormato(String formato) {
+        this.formato = formato;
     }
 }
