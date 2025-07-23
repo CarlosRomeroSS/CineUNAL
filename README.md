@@ -9,6 +9,5 @@
 - **Gestión de funciones:** Programa funciones para cada película y sala.
 - **Reservas:** Permite a los clientes seleccionar asientos y reservar entradas.
 - **Boleto digital:** Genera un boleto digital en formato texto con QR simulado.
-- **Interfaz gráfica (GUI):** Interfaz moderna y sencilla con Java Swing.
 
 ## Estructura del Proyecto
