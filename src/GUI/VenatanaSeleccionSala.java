@@ -1,13 +1,11 @@
 package GUI;
 
-import model.Administrador;
-import model.Pelicula;
-import model.Funcion;
-import model.Sala;
-
-import javax.swing.*;
-import java.awt.*;
 import java.util.List;
+import javax.swing.*;
+import model.Administrador;
+import model.Funcion;
+import model.Pelicula;
+import model.Sala;
 
 public class VenatanaSeleccionSala extends JFrame {
     public VenatanaSeleccionSala(Administrador admin, Pelicula pelicula) {
@@ -22,7 +20,6 @@ public class VenatanaSeleccionSala extends JFrame {
         JLabel label = new JLabel("Sala:");
         panel.add(label);
 
-        // Buscar funciones de la película y extraer las salas disponibles
         List<Funcion> funciones = admin.buscarFuncionesPorPelicula(pelicula);
         DefaultComboBoxModel<Sala> modeloSalas = new DefaultComboBoxModel<>();
         for (Funcion funcion : funciones) {
@@ -35,8 +32,6 @@ public class VenatanaSeleccionSala extends JFrame {
         btnSeleccionar.addActionListener(e -> {
             Sala salaSeleccionada = (Sala) comboSalas.getSelectedItem();
             JOptionPane.showMessageDialog(this, "Seleccionaste: " + (salaSeleccionada != null ? salaSeleccionada.getNombre() : "Ninguna"));
-            // Aquí puedes abrir la ventana para seleccionar asientos
-            // new VentanaSeleccionAsientos(admin, salaSeleccionada, pelicula);
         });
         panel.add(btnSeleccionar);
 

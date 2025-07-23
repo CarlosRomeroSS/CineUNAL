@@ -1,14 +1,13 @@
 package GUI;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.*;
 import model.Administrador;
-import model.Sala;
 import model.Asiento;
 import model.Pelicula;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
-import java.util.ArrayList;
+import model.Sala;
 
 public class VentanaSeleccionAsientos extends JFrame {
     public VentanaSeleccionAsientos(Administrador admin, Sala sala, Pelicula pelicula) {
@@ -23,7 +22,6 @@ public class VentanaSeleccionAsientos extends JFrame {
         JLabel label = new JLabel("Selecciona los asientos:");
         panel.add(label);
 
-        // Obtener los asientos disponibles de la sala
         List<Asiento> asientosDisponibles = new ArrayList<>();
         for (Asiento asiento : sala.getDistribucion().values()) {
             if (asiento.getEstado() == model.AsientoEstado.DISPONIBLE) {
@@ -41,7 +39,6 @@ public class VentanaSeleccionAsientos extends JFrame {
         btnConfirmar.addActionListener(e -> {
             List<Asiento> seleccionados = listaAsientos.getSelectedValuesList();
             JOptionPane.showMessageDialog(this, "Seleccionaste: " + seleccionados);
-            // Aquí puedes continuar el flujo, por ejemplo crear la reserva
         });
         panel.add(btnConfirmar);
 

@@ -1,14 +1,12 @@
 package GUI;
 
+import java.util.List;
+import javax.swing.*;
+import model.Asiento;
 import model.Cliente;
 import model.ClienteTipo;
-import model.Reserva;
 import model.Funcion;
-import model.Asiento;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
+import model.Reserva;
 
 public class VentanaDatos extends JFrame {
     public VentanaDatos(Funcion funcion, List<Asiento> asientosSeleccionados) {
@@ -42,14 +40,13 @@ public class VentanaDatos extends JFrame {
             ClienteTipo tipo = (ClienteTipo) comboTipo.getSelectedItem();
             Cliente cliente = new Cliente(null, nombre, email, tipo);
 
-            // Crear la reserva y mostrarla
-            Reserva reserva = new Reserva(1, cliente, funcion); // id puede ser autogenerado
+            Reserva reserva = new Reserva(1, cliente, funcion);
             reserva.setAsientos(asientosSeleccionados);
             reserva.calcularTotal();
-            reserva.confirmar(); // genera el boleto digital
+            reserva.confirmar();
 
             new VentanaMostrarReserva(reserva);
-            dispose(); // Cierra la ventana actual
+            dispose();
         });
         panel.add(btnConfirmar);
 

@@ -10,25 +10,21 @@ public class VentanaReservar extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Panel principal con layout y margen
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBackground(UIConfig.BACKGROUND_COLOR);
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // Cabecera
         JLabel header = new JLabel("Ventana de Reserva", SwingConstants.CENTER);
         header.setFont(new Font("Arial", Font.BOLD, 20));
         header.setBackground(UIConfig.BACKGROUND_COLOR);
         panel.add(header, BorderLayout.NORTH);
 
-        // Panel central (con espacio para tamaño)
         JPanel panelCentral = new JPanel();
         panelCentral.setLayout(new BoxLayout(panelCentral, BoxLayout.Y_AXIS));
         panelCentral.setBackground(UIConfig.BACKGROUND_COLOR);
         panelCentral.add(Box.createVerticalStrut(50));
         panel.add(panelCentral, BorderLayout.CENTER);
 
-        // Panel inferior para los botones
         JPanel botonesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         botonesPanel.setBackground(UIConfig.BACKGROUND_COLOR);
 
