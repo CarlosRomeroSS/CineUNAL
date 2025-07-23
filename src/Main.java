@@ -151,7 +151,7 @@ public class Main {
                     reserva.setAsientos(seleccionados);
                     reserva.calcularTotal();
                     BoletoDigital boleto = reserva.confirmar();
-                    
+
                     admin.agregarReserva(reserva);
 
                     System.out.println("\n--- RESERVA CONFIRMADA ---");

@@ -6,7 +6,7 @@ public class PriceCalculator {
     private static final BigDecimal PRECIO_BASE = new BigDecimal("15000");
     private static final BigDecimal DESCUENTO_ESTUDIANTE = new BigDecimal("0.20");
     private static final BigDecimal DESCUENTO_TERCERA_EDAD = new BigDecimal("0.30");
-    private static final BigDecimal DESCUENTO_NIÑO = new BigDecimal("0.40");
+    private static final BigDecimal DESCUENTO_NINO = new BigDecimal("0.40");
     private static final BigDecimal RECARGO_VIP = new BigDecimal("0.50");
     private static final BigDecimal RECARGO_IMAX = new BigDecimal("0.80");
     private static final BigDecimal RECARGO_TRESD = new BigDecimal("0.30");
@@ -37,7 +37,7 @@ public class PriceCalculator {
                 precioAsiento = precioAsiento.multiply(BigDecimal.ONE.subtract(DESCUENTO_TERCERA_EDAD));
                 break;
             case NIÑO:
-                precioAsiento = precioAsiento.multiply(BigDecimal.ONE.subtract(DESCUENTO_NIÑO));
+                precioAsiento = precioAsiento.multiply(BigDecimal.ONE.subtract(DESCUENTO_NINO));
                 break;
             case GENERAL:
             default:
