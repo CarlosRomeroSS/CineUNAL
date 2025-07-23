@@ -1,3 +1,4 @@
+package model;
 import java.math.BigDecimal;
 public class PriceCalculator {
     private static final BigDecimal PRECIO_BASE = new BigDecimal("15000");

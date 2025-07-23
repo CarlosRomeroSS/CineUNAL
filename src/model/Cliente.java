@@ -1,3 +1,4 @@
+package model;
 public class Cliente {
     private Integer id;
     private String nombre;

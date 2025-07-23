@@ -1,4 +1,4 @@
-
+package model;
 public class BoletoDigital {
     private String idQR;
     private Reserva reserva;

@@ -1,4 +1,4 @@
-
+package model;
 public class Asiento {
     private Integer id;
     private String fila;
