@@ -78,7 +78,13 @@ public class Main {
                 String email = sc.nextLine();
                 System.out.print("Tipo (GENERAL, ESTUDIANTE, TERCERA_EDAD, NIÑO): ");
                 String tipo = sc.nextLine();
-                Cliente cliente = new Cliente(admin.getPeliculas().size()+1, nombre, email, ClienteTipo.valueOf(tipo));
+                
+                Cliente cliente = new Cliente(
+                    admin.getPeliculas().size()+1,
+                    nombre,
+                    email,
+                    ClienteTipo.valueOf(tipo.trim().toUpperCase())
+                );
 
                 // Selección de asientos
                 List<Asiento> disponibles = new ArrayList<>();
