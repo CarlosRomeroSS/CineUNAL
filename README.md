@@ -11,7 +11,7 @@ CineUNAL es un proyecto de Programación Orientada a Objetos (POO) que simula un
 
 🎟️ Reservas: Permite a los clientes seleccionar asientos y reservar entradas.
 
--📄 Boleto digital: Genera un boleto digital en formato texto con QR simulado.
+📄 Boleto digital: Genera un boleto digital en formato texto con QR simulado.
 
 ## Estructura del Proyecto
 CineApp/
