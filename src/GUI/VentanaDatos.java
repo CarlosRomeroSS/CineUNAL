@@ -2,12 +2,16 @@ package GUI;
 
 import model.Cliente;
 import model.ClienteTipo;
+import model.Reserva;
+import model.Funcion;
+import model.Asiento;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class VentanaDatos extends JFrame {
-    public VentanaDatos() {
+    public VentanaDatos(Funcion funcion, List<Asiento> asientosSeleccionados) {
         setTitle("Datos del Cliente");
         setSize(350, 250);
         setLocationRelativeTo(null);
@@ -37,9 +41,15 @@ public class VentanaDatos extends JFrame {
             String email = txtEmail.getText();
             ClienteTipo tipo = (ClienteTipo) comboTipo.getSelectedItem();
             Cliente cliente = new Cliente(null, nombre, email, tipo);
-            JOptionPane.showMessageDialog(this, "Cliente registrado:\n" +
-                "Nombre: " + nombre + "\nEmail: " + email + "\nTipo: " + tipo);
-            // Aquí puedes continuar el flujo, por ejemplo pasar el cliente a la reserva
+
+            // Crear la reserva y mostrarla
+            Reserva reserva = new Reserva(1, cliente, funcion); // id puede ser autogenerado
+            reserva.setAsientos(asientosSeleccionados);
+            reserva.calcularTotal();
+            reserva.confirmar(); // genera el boleto digital
+
+            new VentanaMostrarReserva(reserva);
+            dispose(); // Cierra la ventana actual
         });
         panel.add(btnConfirmar);
 
